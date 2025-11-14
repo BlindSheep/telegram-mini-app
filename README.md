@@ -19,11 +19,11 @@ php artisan vendor:publish --provider="MoonShine\TlgMiniApp\Providers\TlgMiniApp
 ```dotenv
 TELEGRAM_BOT_TOKEN=<TOKEN_HERE>
 ```
-Использование плагина требует наличие поля telegram_id в таблице используемой для хранения пользователей. Если используется таблица по умолчанию (moonshine_users) то достаточно просто выполнить миграции 
+Using the plugin requires the telegram_id field to be present in the table used to store users. If the default table (moonshine_users) is used, then simply running migrations is sufficient. 
 ```shell
 php artisan migrate
 ```
-Если используется не стандартная таблица, то необходимо найти миграцию [2025_10_31_144332_add_telegram_id_to_moonshine_users.php](database/migrations/2025_10_31_144332_add_telegram_id_to_moonshine_users.php) и заменить в ней название таблицы moonshine_users на используемую Вами
+If you are using a non-standard table, you need to find the migration [2025_10_31_144332_add_telegram_id_to_moonshine_users.php](database/migrations/2025_10_31_144332_add_telegram_id_to_moonshine_users.php) and replace the name of the moonshine_users table with the one you are using.
 #### Usage
 
 #### Set MiniApp url
