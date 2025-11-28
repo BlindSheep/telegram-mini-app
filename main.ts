@@ -7,7 +7,7 @@ if (isTMA()) {
 
     const url = document.querySelector('meta[name="url"]').getAttribute('content');
     const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-    const configDisableVerticalSwipesValue = document.querySelector('meta[name="config-disable_vertical_swipes"]').getAttribute('content');
+    const configDisableVerticalSwipesValue = Boolean(document.querySelector('meta[name="config-disable_vertical_swipes"]').getAttribute('content'));
     console.log('configDisableVerticalSwipesValue', configDisableVerticalSwipesValue);
     if (configDisableVerticalSwipesValue) {
         disableVerticalSwipes();
