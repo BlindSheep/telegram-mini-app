@@ -1,10 +1,10 @@
-import { init, retrieveRawInitData } from '@telegram-apps/sdk';
+import { init, retrieveRawInitData, disableVerticalSwipes } from '@telegram-apps/sdk';
 import { isTMA } from '@telegram-apps/bridge';
 import axios from 'axios';
 
 if (isTMA()) {
     init();
-
+    disableVerticalSwipes();
     const url = document.querySelector('meta[name="url"]').getAttribute('content');
     const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
