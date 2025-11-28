@@ -10,6 +10,7 @@ if (isTMA()) {
     const configDisableVerticalSwipesValue = Boolean(document.querySelector('meta[name="config-disable_vertical_swipes"]').getAttribute('content'));
     console.log('configDisableVerticalSwipesValue', configDisableVerticalSwipesValue);
     if (configDisableVerticalSwipesValue) {
+        console.log('disable vertical swipe')
         swipeBehavior.disableVertical();
         console.log(swipeBehavior.isVerticalEnabled);
     }
