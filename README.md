@@ -15,10 +15,17 @@ composer require moonshine/telegram-mini-app
 ```shell
 php artisan vendor:publish --provider="MoonShine\TlgMiniApp\Providers\TlgMiniAppServiceProvider"
 ```
-
+Configure your bot token in .env
 ```dotenv
 TELEGRAM_BOT_TOKEN=<TOKEN_HERE>
 ```
+
+To disable vertical swipe, add a parameter (default is false) to .env
+
+```dotenv
+DISABLE_VERTICAL_SWITCHES=<true or false>
+```
+
 Using the plugin requires the telegram_id field to be present in the table used to store users. If the default table (moonshine_users) is used, then simply running migrations is sufficient. 
 ```shell
 php artisan migrate
