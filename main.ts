@@ -9,10 +9,17 @@ if (isTMA()) {
     const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
     const configDisableVerticalSwipesValue = Boolean(document.querySelector('meta[name="config-disable_vertical_swipes"]').getAttribute('content'));
     console.log('configDisableVerticalSwipesValue', configDisableVerticalSwipesValue);
-    if (configDisableVerticalSwipesValue) {
-        console.log('disable vertical swipe')
-        swipeBehavior.disableVertical();
-        console.log(swipeBehavior.isVerticalEnabled);
+    if (
+        configDisableVerticalSwipesValue
+    ) {
+        if (swipeBehavior.isSupported()) {
+            console.log('disable vertical swipe')
+            swipeBehavior.mount();
+            swipeBehavior.disableVertical();
+            console.log(swipeBehavior.isVerticalEnabled);
+        } else {
+            console.warn('Swipe behaviour is not supported')
+        }
     }
     axios.post(url, {}, {
         headers: {
